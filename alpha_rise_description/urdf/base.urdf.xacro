@@ -25,7 +25,7 @@
         <child link="imu"/>
     </joint>
 
-    <link name="gps"/>
+    <!-- <link name="gps"/>
     <joint name="gps_joint" type="fixed">
         <origin xyz="0.1 0.0 0.407241" rpy="3.1415 0.0 0.0"/>
         <parent link="base_link"/>
@@ -35,10 +35,9 @@
     <link name="pressure"/>
     <joint name="pressure_joint" type="fixed">
         <origin xyz="-0.187845 -0.060 0.124465" rpy="0.0 3.14159265359 0.0"/>
-        <!--origin xyz="-0.087845 0.060 -0.124465" rpy="0.0 0.0 0.0"/-->
         <parent link="base_link"/>
         <child link="pressure"/>
-    </joint>
+    </joint> -->
 <!-- 
     <link name="dvl"/>
     <joint name="dvl_joint" type="fixed">
@@ -47,7 +46,7 @@
         <child link="dvl"/>
     </joint> -->
 
-   
+<!--    
     <link name="surge_thruster_link"/>
     <joint name="surge_thruster_joint" type="fixed">
         <origin xyz="-0.554 0.0 0.100" rpy="0.0 0.0 0.0"/>
@@ -73,8 +72,8 @@
     <joint name="sway_bow_thruster_joint" type="fixed">
         <origin xyz="0.57635 0.0 0.105" rpy="0.0 0.0 1.57079632679"/>
         <parent link="base_link"/>
-        <child link="sway_bow_thruster_link"/>
-    </joint>
+        <child link="sway_bow_thruster_link"/> -->
+    <!-- </joint> -->
 
 
 </robot>
