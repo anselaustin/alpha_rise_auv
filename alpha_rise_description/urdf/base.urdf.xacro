@@ -39,13 +39,13 @@
         <parent link="base_link"/>
         <child link="pressure"/>
     </joint>
-
+<!-- 
     <link name="dvl"/>
     <joint name="dvl_joint" type="fixed">
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="dvl"/>
-    </joint>
+    </joint> -->
 
    
     <link name="surge_thruster_link"/>
