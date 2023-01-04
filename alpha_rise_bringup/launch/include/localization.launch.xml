@@ -25,7 +25,7 @@
         <remap from="accel/filtered" to="accel/filtered/local"/>
 
 
-        <param name="imu0" value="imu/base/data"/>
+        <param name="imu0" value="imu/data"/>
         <rosparam param="imu0_config">
         [false, false, false,
          true,   true,  true,
@@ -42,7 +42,7 @@
         <rosparam param="twist0_config">
         [false, false, false,
          false, false, false,
-         true,   true, false,
+         true,   true, true,
          false, false, false,
          false, false, false]
         </rosparam>
@@ -68,33 +68,35 @@
     <group if="$(arg is_sim)">
 
 
+        <!-- Transforms NED IMU data pulished in frame imu_link_ned on topics /imu/data_ned and /imu/mag_ned to
+        ENU data in frame imu_link published on /imu/data_enu and /imu/mag_enu -->
+        <!-- <node pkg="imu_transformer" type="imu_transformer_node" name="imu_data_transformer" output="screen">
+            <remap from="imu_in" to="$(arg robot_name)/imu/stonefish/"/>
+            <remap from="imu_out" to="$(arg robot_name)/imu/"/>
+            <param name="target_frame" value="$(arg robot_name)/imu"/>
+        </node> -->
+
         <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="alpha_localization" type="imu_ned_to_enu" output="screen">
             <remap from="imu_in/data" to="imu/stonefish/data"/>
             <remap from="imu_out/data" to="imu/data"/>
         </node>
 
-        <node ns="$(arg robot_name)" name="imu_transformer" pkg="imu_transformer" type="imu_transformer_node" output="screen">
-            <param name="target_frame" value="$(arg robot_name)/base_link"/>
 
-            <remap from="imu_in/data" to="imu/data"/>
-            <remap from="imu_out/data" to="imu/base/data"/>
-        </node>
-
-        <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="alpha_localization" type="pressure_to_depth_node" output="screen">
+        <!-- <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="alpha_localization" type="pressure_to_depth_node" output="screen">
             <param name="frame_id" value="$(arg robot_name)/odom"/>
 
             <remap from="depth" to="depth"/>
             <remap from="pressure" to="pressure"/>
-        </node>
+        </node> -->
 
     </group>
 
-    <node ns="$(arg robot_name)" name="depth_filter" pkg="alpha_localization" type="depth_filter_node" output="screen">
+    <!-- <node ns="$(arg robot_name)" name="depth_filter" pkg="alpha_localization" type="depth_filter_node" output="screen">
         <param name="frame_id" value="$(arg robot_name)/odom"/>
 
         <remap from="depth" to="depth"/>
         <remap from="depth_filtered" to="depth_filtered"/>
-    </node>
+    </node> -->
 
 
 

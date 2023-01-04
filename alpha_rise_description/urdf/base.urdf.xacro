@@ -13,16 +13,37 @@
 
     <link name="cg_link"/>
     <joint name="cg_joint" type="fixed">
-        <origin xyz="0.100 0.000 0.10" rpy="3.14159265359 0.0 0.0"/>
+        <origin xyz="0.100 0.000 0.10" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="cg_link"/>
     </joint>
 
     <link name="imu"/>
     <joint name="imu_joint" type="fixed">
-        <origin xyz="-0.0465 0.060 0.14648" rpy="3.14159265359 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="imu"/>
+    </joint>
+
+    <link name="imu_sf"/>
+    <joint name="imu__sf_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="imu_sf"/>
+    </joint>
+
+    <link name="dvl"/>
+    <joint name="dvl_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="dvl"/>
+    </joint>
+
+     <link name="dvl_sf"/>
+    <joint name="dvl_sf_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 0.0"/>
+        <parent link="dvl"/>
+        <child link="dvl_sf"/>
     </joint>
 
     <!-- <link name="gps"/>
@@ -38,13 +59,8 @@
         <parent link="base_link"/>
         <child link="pressure"/>
     </joint> -->
-<!-- 
-    <link name="dvl"/>
-    <joint name="dvl_joint" type="fixed">
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <parent link="base_link"/>
-        <child link="dvl"/>
-    </joint> -->
+
+
 
 <!--    
     <link name="surge_thruster_link"/>
