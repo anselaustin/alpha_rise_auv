@@ -67,27 +67,26 @@
 
     <group if="$(arg is_sim)">
 
-
-        <!-- Transforms NED IMU data pulished in frame imu_link_ned on topics /imu/data_ned and /imu/mag_ned to
-        ENU data in frame imu_link published on /imu/data_enu and /imu/mag_enu -->
-        <!-- <node pkg="imu_transformer" type="imu_transformer_node" name="imu_data_transformer" output="screen">
-            <remap from="imu_in" to="$(arg robot_name)/imu/stonefish/"/>
-            <remap from="imu_out" to="$(arg robot_name)/imu/"/>
-            <param name="target_frame" value="$(arg robot_name)/imu"/>
-        </node> -->
-
         <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="alpha_localization" type="imu_ned_to_enu" output="screen">
             <remap from="imu_in/data" to="imu/stonefish/data"/>
             <remap from="imu_out/data" to="imu/data"/>
+            <param name="frame_id" value="$(arg robot_name)/imu"/>
         </node>
 
+<!--         
+        <node ns="$(arg robot_name)" name="imu_transformer" pkg="imu_transformer" type="imu_transformer_node" output="screen">
+            <param name="target_frame" value="$(arg robot_name)/imu"/>
+            <remap from="imu_in/data" to="imu/data"/>
+            <remap from="imu_out/data" to="imu/base/data"/>
+        </node> -->
 
-        <!-- <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="alpha_localization" type="pressure_to_depth_node" output="screen">
+
+        <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="alpha_localization" type="pressure_to_depth_node" output="screen">
             <param name="frame_id" value="$(arg robot_name)/odom"/>
 
             <remap from="depth" to="depth"/>
             <remap from="pressure" to="pressure"/>
-        </node> -->
+        </node>
 
     </group>
 
