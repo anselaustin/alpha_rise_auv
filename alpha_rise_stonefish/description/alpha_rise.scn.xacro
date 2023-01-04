@@ -139,7 +139,7 @@
             <sensor name="pressure" type="pressure" rate="5.0">
                 <link name="Base"/>
                 <origin rpy="0.0 0.0 0.0" xyz="-1.20 0.0 0.0"/>
-                <noise pressure="5.0"/>
+                <noise pressure="2.0"/>
                 <ros_publisher topic="/${robot_name}/pressure"/>
             </sensor>
 
@@ -168,7 +168,7 @@
 
 
             <!-- perception sensors -->
-            <sensor name="MSIS" type="msis">
+            <!-- <sensor name="MSIS" type="msis">
                 <specs step="0.9" bins="200" horizontal_beam_width="2.0" vertical_beam_width="15.0"/>
                 <settings range_min="0.75" range_max="50.0" rotation_min="-45.0" rotation_max="45.0" gain="2.5"/>
                 <noise multiplicative="0.02" additive="0.03"/>
@@ -176,7 +176,7 @@
                 <origin xyz="0.0 0.0 10.0" rpy="0.0 0.0 1.5707963"/>
                 <link name="Base"/>
                 <ros_publisher topic="/${robot_name}/MSIS/data"/>
-            </sensor>
+            </sensor> -->
 
 
 
