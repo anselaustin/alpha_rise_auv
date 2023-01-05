@@ -6,8 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
-        - /TF1
         - /TF1/Frames1
+        - /Marker1
+        - /Marker2
       Splitter Ratio: 0.5089927911758423
     Tree Height: 826
   - Class: rviz/Selection
@@ -102,6 +103,14 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        heave_bow_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        heave_stern_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         imu:
           Alpha: 1
           Show Axes: false
@@ -111,6 +120,14 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         pressure:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        surge_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sway_bow_thruster_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -135,6 +152,10 @@ Visualization Manager:
           Value: true
         alpha_rise/gps:
           Value: true
+        alpha_rise/heave_bow_thruster_link:
+          Value: true
+        alpha_rise/heave_stern_thruster_link:
+          Value: true
         alpha_rise/imu:
           Value: true
         alpha_rise/imu_sf:
@@ -142,6 +163,10 @@ Visualization Manager:
         alpha_rise/odom:
           Value: false
         alpha_rise/pressure:
+          Value: true
+        alpha_rise/surge_thruster_link:
+          Value: true
+        alpha_rise/sway_bow_thruster_link:
           Value: true
         alpha_rise/world:
           Value: false
@@ -164,16 +189,40 @@ Visualization Manager:
               {}
             alpha_rise/gps:
               {}
+            alpha_rise/heave_bow_thruster_link:
+              {}
+            alpha_rise/heave_stern_thruster_link:
+              {}
             alpha_rise/imu:
               {}
             alpha_rise/imu_sf:
               {}
             alpha_rise/pressure:
               {}
+            alpha_rise/surge_thruster_link:
+              {}
+            alpha_rise/sway_bow_thruster_link:
+              {}
           alpha_rise/world:
             alpha_rise/world_ned:
               {}
       Update Interval: 0
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /alpha_rise/helm/path_local/path
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /alpha_rise/helm/path_local/segment
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
@@ -203,7 +252,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.8860094547271729
+      Distance: 8.755053520202637
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
