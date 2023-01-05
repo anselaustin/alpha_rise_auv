@@ -71,21 +71,54 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: alpha/base_link
       Value: false
-    - Alpha: 0.5
+    - Alpha: 0.10000000149011612
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        cg_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        dvl:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        dvl_sf:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gps:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        imu:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        imu_sf:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pressure:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: alpha_rise/robot_description
       TF Prefix: alpha_rise
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
@@ -97,15 +130,19 @@ Visualization Manager:
         alpha_rise/cg_link:
           Value: false
         alpha_rise/dvl:
-          Value: false
+          Value: true
         alpha_rise/dvl_sf:
-          Value: false
+          Value: true
+        alpha_rise/gps:
+          Value: true
         alpha_rise/imu:
-          Value: false
+          Value: true
         alpha_rise/imu_sf:
-          Value: false
+          Value: true
         alpha_rise/odom:
           Value: false
+        alpha_rise/pressure:
+          Value: true
         alpha_rise/world:
           Value: false
         alpha_rise/world_ned:
@@ -122,11 +159,16 @@ Visualization Manager:
             alpha_rise/cg_link:
               {}
             alpha_rise/dvl:
-              alpha_rise/dvl_sf:
-                {}
+              {}
+            alpha_rise/dvl_sf:
+              {}
+            alpha_rise/gps:
+              {}
             alpha_rise/imu:
               {}
             alpha_rise/imu_sf:
+              {}
+            alpha_rise/pressure:
               {}
           alpha_rise/world:
             alpha_rise/world_ned:
@@ -161,7 +203,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.297591209411621
+      Distance: 1.8860094547271729
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -177,9 +219,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.810398280620575
+      Pitch: 0.16039863228797913
       Target Frame: alpha/base_link
-      Yaw: 2.040398120880127
+      Yaw: 2.6753973960876465
     Saved: ~
 Window Geometry:
   Displays:
