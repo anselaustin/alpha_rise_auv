@@ -8,5 +8,5 @@ state_fail: start
 
 
 waypoints:
-  - {lat: 41.0000, long: 71.003}
-  - {lat: 41.003, long: 71.006}
+  - {lat: 41.0000, long: 71.0003}
+  - {lat: 41.0003, long: 71.0006}

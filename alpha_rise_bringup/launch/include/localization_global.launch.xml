@@ -10,7 +10,7 @@
 -->
 <launch>
 
-    <arg name="robot_name" default="alpha_rise"/>
+    <arg name="robot_name" default="changeme"/>
 
 
     <node ns="$(arg robot_name)" name="$(arg robot_name)_navsat_transform" pkg="robot_localization" type="navsat_transform_node" output="screen">

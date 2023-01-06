@@ -35,8 +35,9 @@
 
         <rosparam command="load" ns="gps_wpt" file="$(find alpha_rise_config)/mission/param/gps_wpt.yaml"/>
         <param name="gps_wpt/target_frame_id" value="$(arg robot_name)/odom"/>
-        <param name="gps_wpt/target_topic" value="$(arg robot_name)/helm/path_global/update_waypoints"/>
-        <param name="gps_wpt/fromll_serivce" value="$(arg robot_name)/fromLL"/>
+        <param name="gps_wpt/target_topic" value="/$(arg robot_name)/helm/path_global/update_waypoints"/>
+        <param name="gps_wpt/fromll_service" value="/$(arg robot_name)/fromLL"/>
+        <!-- <param name="gps_wpt/fromll_service" value="test"/> -->
 
        
 

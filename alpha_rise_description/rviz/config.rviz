@@ -29,7 +29,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -120,10 +120,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        mss:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         pressure:
           Alpha: 1
           Show Axes: false
@@ -165,7 +161,7 @@ Visualization Manager:
           Value: true
         alpha_rise/imu_sf:
           Value: true
-        alpha_rise/mss:
+        alpha_rise/map:
           Value: true
         alpha_rise/odom:
           Value: false
@@ -186,39 +182,39 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        alpha_rise/odom:
-          alpha_rise/base_link:
-            alpha_rise/cg_link:
-              alpha_rise/mss:
+        alpha_rise/map:
+          alpha_rise/odom:
+            alpha_rise/base_link:
+              alpha_rise/cg_link:
                 {}
-            alpha_rise/dvl:
-              {}
-            alpha_rise/dvl_sf:
-              {}
-            alpha_rise/gps:
-              {}
-            alpha_rise/heave_bow_thruster_link:
-              {}
-            alpha_rise/heave_stern_thruster_link:
-              {}
-            alpha_rise/imu:
-              {}
-            alpha_rise/imu_sf:
-              {}
-            alpha_rise/pressure:
-              {}
-            alpha_rise/surge_thruster_link:
-              {}
-            alpha_rise/sway_bow_thruster_link:
-              {}
-          alpha_rise/world:
-            alpha_rise/world_ned:
-              {}
+              alpha_rise/dvl:
+                {}
+              alpha_rise/dvl_sf:
+                {}
+              alpha_rise/gps:
+                {}
+              alpha_rise/heave_bow_thruster_link:
+                {}
+              alpha_rise/heave_stern_thruster_link:
+                {}
+              alpha_rise/imu:
+                {}
+              alpha_rise/imu_sf:
+                {}
+              alpha_rise/pressure:
+                {}
+              alpha_rise/surge_thruster_link:
+                {}
+              alpha_rise/sway_bow_thruster_link:
+                {}
+            alpha_rise/world:
+              alpha_rise/world_ned:
+                {}
       Update Interval: 0
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /alpha_rise/helm/path_local/path
+      Marker Topic: /alpha_rise/helm/path_global/path
       Name: Marker
       Namespaces:
         {}
@@ -226,7 +222,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /alpha_rise/helm/path_local/segment
+      Marker Topic: /alpha_rise/helm/path_global/segment
       Name: Marker
       Namespaces:
         {}
