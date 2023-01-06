@@ -37,7 +37,7 @@
                     <dimensions radius="0.12" height="0.9"/>
                     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
                     <material name="Foam"/>
-                    <mass value="1.0"/>
+                    <mass value="1.5"/>
                     <look name="grey"/>
                     <compound_transform rpy="0.0 1.571 0.0" xyz="-0.65 0.0 -0.1"/>
                 </internal_part>
@@ -168,14 +168,25 @@
 
 
             <!-- perception sensors -->
-            <!-- <sensor name="MSIS" type="msis">
-                <specs step="0.9" bins="200" horizontal_beam_width="2.0" vertical_beam_width="15.0"/>
+            <!-- <sensor name="mss" rate="5.0" type="profiler">
+                <specs fov="90.0" steps="100"/>
+                <range distance_min="0.5" distance_max="100.0"/>
+                <noise distance="0.05"/>
+                <history samples="1"/>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 -1.5707963 0.0"/>
+                <link name="Base"/>
+                <ros_publisher topic="/${robot_name}/MSS/data"/>
+            </sensor> -->
+            
+            
+            <!-- <sensor name="msis" type="msis">
+                <specs step="1.8" bins="1250" horizontal_beam_width="2.0" vertical_beam_width="15.0"/>
                 <settings range_min="0.75" range_max="50.0" rotation_min="-45.0" rotation_max="45.0" gain="2.5"/>
                 <noise multiplicative="0.02" additive="0.03"/>
-                <display colormap="hot"/>
-                <origin xyz="0.0 0.0 10.0" rpy="0.0 0.0 1.5707963"/>
+                <display colormap="gray"/>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707963"/>
                 <link name="Base"/>
-                <ros_publisher topic="/${robot_name}/MSIS/data"/>
+                <ros_publisher topic="/${robot_name}/msis/data"/>
             </sensor> -->
 
 

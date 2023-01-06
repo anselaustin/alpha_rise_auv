@@ -7,9 +7,16 @@ finite_state_machine:
     initial: true
     transitions:
       - survey_local
+      - survey_global
       - kill
 
   - name: survey_local
+    mode: flight
+    transitions:
+      - start
+      - kill
+
+  - name: survey_global
     mode: flight
     transitions:
       - start
@@ -23,16 +30,28 @@ finite_state_machine:
 
 behaviors:
   - name: path_local
-    plugin: helm::PathFollowing
+    plugin: helm::PathFollowingI
     states:
       - { name: survey_local, priority: 1 }
+
+  - name: path_global
+    plugin: helm::PathFollowingI
+    states:
+      - { name: survey_global, priority: 1 }
 
   - name: depth_tracking
     plugin: helm::DepthTracking
     states:
       - { name: survey_local, priority: 1 }
+      - { name: survey_global, priority: 1 }
 
   - name: periodic_sufacing
     plugin: helm::PeriodicSurface
     states:
       - {name: survey_local, priority: 2 }
+      - {name: survey_global, priority: 2 }
+
+  - name: gps_wpt
+    plugin: helm::GpsWaypoint
+    states:
+      - {name: survey_global, priority: 1}

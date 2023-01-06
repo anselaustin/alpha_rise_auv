@@ -1,0 +1,13 @@
+state_fail: start
+
+target_topic: /alpha_rise/helm/path_global/update_waypoints
+fromll_serivce: /alpha_rise/fromLL
+
+
+# target_frame_id: {{ set in the launch file }}
+# target_frame_id: alpha/odom
+
+
+waypoints:
+  - {lat: 41.0000, long: 71.003}
+  - {lat: 41.003, long: 71.006}

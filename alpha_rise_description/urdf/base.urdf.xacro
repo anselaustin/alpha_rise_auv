@@ -88,6 +88,15 @@
         <parent link="base_link"/>
         <child link="sway_bow_thruster_link"/>
     </joint>
+    
+    <!-- perception sensors -->
+    <!-- <link name="mss"/>
+    <joint name="mss_joint" type="fixed">
+        <origin xyz="0.65 0.0 0.0" rpy="3.1415926 1.5707963 0.0"/>
+        <parent link="base_link"/>
+        <child link="mss"/>
+    </joint> -->
 
 
+   
 </robot>
