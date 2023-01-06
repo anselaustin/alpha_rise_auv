@@ -179,15 +179,15 @@
             </sensor> -->
             
             
-            <!-- <sensor name="msis" type="msis">
-                <specs step="1.8" bins="1250" horizontal_beam_width="2.0" vertical_beam_width="15.0"/>
-                <settings range_min="0.75" range_max="50.0" rotation_min="-45.0" rotation_max="45.0" gain="2.5"/>
+            <sensor name="msis" type="msis">
+                <specs step="1.8" bins="1250" horizontal_beam_width="1.5" vertical_beam_width="15.0"/>
+                <settings range_min="0.75" range_max="50.0" rotation_min="-45.0" rotation_max="45.0" gain="3.5"/>
                 <noise multiplicative="0.02" additive="0.03"/>
-                <display colormap="gray"/>
+                <display colormap="hot"/>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707963"/>
                 <link name="Base"/>
                 <ros_publisher topic="/${robot_name}/msis/data"/>
-            </sensor> -->
+            </sensor>
 
 
 
