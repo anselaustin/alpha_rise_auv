@@ -6,8 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
-        - /TF1
         - /TF1/Frames1
+        - /Marker1
+        - /Marker2
+        - /LaserScan1
       Splitter Ratio: 0.5089927911758423
     Tree Height: 826
   - Class: rviz/Selection
@@ -71,21 +73,70 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: alpha/base_link
       Value: false
-    - Alpha: 0.5
+    - Alpha: 0.10000000149011612
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        cg_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        dvl:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        dvl_sf:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gps:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        heave_bow_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        heave_stern_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        imu:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        imu_sf:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pressure:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        surge_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sway_bow_thruster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: alpha_rise/robot_description
       TF Prefix: alpha_rise
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
@@ -97,15 +148,29 @@ Visualization Manager:
         alpha_rise/cg_link:
           Value: false
         alpha_rise/dvl:
-          Value: false
+          Value: true
         alpha_rise/dvl_sf:
-          Value: false
+          Value: true
+        alpha_rise/gps:
+          Value: true
+        alpha_rise/heave_bow_thruster_link:
+          Value: true
+        alpha_rise/heave_stern_thruster_link:
+          Value: true
         alpha_rise/imu:
-          Value: false
+          Value: true
         alpha_rise/imu_sf:
-          Value: false
+          Value: true
+        alpha_rise/map:
+          Value: true
         alpha_rise/odom:
           Value: false
+        alpha_rise/pressure:
+          Value: true
+        alpha_rise/surge_thruster_link:
+          Value: true
+        alpha_rise/sway_bow_thruster_link:
+          Value: true
         alpha_rise/world:
           Value: false
         alpha_rise/world_ned:
@@ -117,21 +182,79 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        alpha_rise/odom:
-          alpha_rise/base_link:
-            alpha_rise/cg_link:
-              {}
-            alpha_rise/dvl:
+        alpha_rise/map:
+          alpha_rise/odom:
+            alpha_rise/base_link:
+              alpha_rise/cg_link:
+                {}
+              alpha_rise/dvl:
+                {}
               alpha_rise/dvl_sf:
                 {}
-            alpha_rise/imu:
-              {}
-            alpha_rise/imu_sf:
-              {}
-          alpha_rise/world:
-            alpha_rise/world_ned:
-              {}
+              alpha_rise/gps:
+                {}
+              alpha_rise/heave_bow_thruster_link:
+                {}
+              alpha_rise/heave_stern_thruster_link:
+                {}
+              alpha_rise/imu:
+                {}
+              alpha_rise/imu_sf:
+                {}
+              alpha_rise/pressure:
+                {}
+              alpha_rise/surge_thruster_link:
+                {}
+              alpha_rise/sway_bow_thruster_link:
+                {}
+            alpha_rise/world:
+              alpha_rise/world_ned:
+                {}
       Update Interval: 0
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /alpha_rise/helm/path_global/path
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /alpha_rise/helm/path_global/segment
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 10
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.20000000298023224
+      Style: Flat Squares
+      Topic: /alpha_rise/MSS/data
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
@@ -161,7 +284,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.297591209411621
+      Distance: 19.28765296936035
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -177,9 +300,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.810398280620575
+      Pitch: 0.7853981852531433
       Target Frame: alpha/base_link
-      Yaw: 2.040398120880127
+      Yaw: 0.7853981852531433
     Saved: ~
 Window Geometry:
   Displays:

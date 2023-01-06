@@ -73,16 +73,8 @@
             <param name="frame_id" value="$(arg robot_name)/imu"/>
         </node>
 
-<!--         
-        <node ns="$(arg robot_name)" name="imu_transformer" pkg="imu_transformer" type="imu_transformer_node" output="screen">
-            <param name="target_frame" value="$(arg robot_name)/imu"/>
-            <remap from="imu_in/data" to="imu/data"/>
-            <remap from="imu_out/data" to="imu/base/data"/>
-        </node> -->
-
-
         <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="alpha_localization" type="pressure_to_depth_node" output="screen">
-            <param name="frame_id" value="$(arg robot_name)/odom"/>
+            <param name="frame_id" value="$(arg robot_name)/pressure"/>
 
             <remap from="depth" to="depth"/>
             <remap from="pressure" to="pressure"/>
@@ -90,12 +82,12 @@
 
     </group>
 
-    <!-- <node ns="$(arg robot_name)" name="depth_filter" pkg="alpha_localization" type="depth_filter_node" output="screen">
+    <node ns="$(arg robot_name)" name="depth_filter" pkg="alpha_localization" type="depth_filter_node" output="screen">
         <param name="frame_id" value="$(arg robot_name)/odom"/>
 
         <remap from="depth" to="depth"/>
         <remap from="depth_filtered" to="depth_filtered"/>
-    </node> -->
+    </node>
 
 
 

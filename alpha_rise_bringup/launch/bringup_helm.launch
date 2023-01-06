@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of ALPHA AUV project.
+
+    Author: Emir Cem Gezer
+    Email: emircem@uri.edu;emircem.gezer@gmail.com
+    Year: 2022
+
+    Copyright (C) 2022 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+    <arg name="robot_name" default="changeme"/>
+
+    <node ns="$(arg robot_name)" pkg="mvp_helm" type="helm" name="helm" output="screen">
+        <!--
+            Load the parameters for the MVP Helm
+        -->
+        <rosparam
+            command="load"
+            file="$(find alpha_rise_config)/mission/config/helm.yaml"/>
+
+        <!--
+            Load all the parameters for the behaviors.
+        -->
+        <rosparam command="load" ns="depth_tracking" file="$(find alpha_rise_config)/mission/param/depth_tracking.yaml"/>
+
+        <rosparam command="load" ns="periodic_surfacing" file="$(find alpha_rise_config)/mission/param/periodic_surfacing.yaml"/>
+
+        <!-- load path following related param -->
+        <rosparam command="load" ns="path_local" file="$(find alpha_rise_config)/mission/param/path_local.yaml"/>
+        <param name="path_local/frame_id" value="$(arg robot_name)/world_ned"/>
+
+        <rosparam command="load" ns="path_global" file="$(find alpha_rise_config)/mission/param/path_global.yaml"/>
+
+        <rosparam command="load" ns="gps_wpt" file="$(find alpha_rise_config)/mission/param/gps_wpt.yaml"/>
+        <param name="gps_wpt/target_frame_id" value="$(arg robot_name)/odom"/>
+        <param name="gps_wpt/target_topic" value="/$(arg robot_name)/helm/path_global/update_waypoints"/>
+        <param name="gps_wpt/fromll_service" value="/$(arg robot_name)/fromLL"/>
+        <!-- <param name="gps_wpt/fromll_service" value="test"/> -->
+
+       
+
+        <!-- <rosparam command="load" ns="timer" file="$(find alpha_rise_config)/mission/param/timer.yaml"/> -->
+
+    </node>
+
+</launch>
