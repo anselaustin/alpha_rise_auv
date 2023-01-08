@@ -16,6 +16,7 @@
     <node ns="$(arg robot_name)" name="$(arg robot_name)_navsat_transform" pkg="robot_localization" type="navsat_transform_node" output="screen">
         <rosparam command="load" file="$(find alpha_rise_config)/config/navsat.yaml"/>
         <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
+        <!-- <rosparam param="datum">[41.0, 71.0, 0.0, "$(arg robot_name)/odom", "$(arg robot_name)/base_link"]</rosparam> -->
         <remap from="odometry/filtered" to="odometry/filtered/local" />
         <remap from="/imu/data" to="imu/data"/>
         <remap from="/gps/fix" to="gps/fix/" />

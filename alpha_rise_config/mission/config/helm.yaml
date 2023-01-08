@@ -48,8 +48,8 @@ behaviors:
   - name: periodic_sufacing
     plugin: helm::PeriodicSurface
     states:
-      - {name: survey_local, priority: 2 }
-      - {name: survey_global, priority: 2 }
+      - {name: survey_local, priority: 0 }
+      - {name: survey_global, priority: 0 }
 
   - name: gps_wpt
     plugin: helm::GpsWaypoint

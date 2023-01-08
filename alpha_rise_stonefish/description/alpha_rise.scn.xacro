@@ -155,16 +155,24 @@
             <sensor name="imu_sf" type="imu" rate="20.0">
                 <link name="Base"/>
                 <origin rpy="3.1415926 0.0 0.0" xyz="-0.65 0.0 -0.05"/>
-                <noise angle="0.01745" angular_velocity="0.001745"/>
+                <noise angle="0.01 0.01 0.05" angular_velocity="0.05" yaw_drift="0.001" linear_acceleration="0.1"/>
                 <ros_publisher topic="/${robot_name}/imu/stonefish/data"/>
             </sensor>
 
             <sensor name="gps" type="gps" rate="1.0">
                 <link name="Base"/>
                 <origin rpy="0.0 0.0 0.0" xyz="-0.7 0.0 -0.3"/>
-                <noise ned_position="0.5"/>
+                <noise ned_position="0.1"/>
                 <ros_publisher topic="/${robot_name}/gps/fix"/>
             </sensor>
+
+            <!-- <sensor name="odom" rate="10.0" type="odometry">
+                <noise position="0.00" velocity="0.00" angle="0.0" angular_velocity="0.00"/>
+                <history samples="1"/>
+                <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 -1.5707963"/>
+                <link name="Base"/>
+                <ros_publisher topic="/${robot_name}/sf/odometry"/>
+            </sensor> -->
 
 
             <!-- perception sensors -->
