@@ -148,23 +148,31 @@
                 <origin rpy="3.1415926 0.0 0.0" xyz="-0.65 0.0 0.1"/>
                 <specs beam_angle="30.0"/>
                 <range velocity="9.0 9.0 9.0" altitude_min="0.2" altitude_max="200.0"/>
-                <noise velocity="0.0015" altitude="0.001"/>
+                <noise velocity="0.015" altitude="0.001"/>
                 <ros_publisher topic="/${robot_name}/dvl/twist" altitude_topic="/${robot_name}/dvl/altitude"/>
             </sensor>
 
             <sensor name="imu_sf" type="imu" rate="20.0">
                 <link name="Base"/>
                 <origin rpy="3.1415926 0.0 0.0" xyz="-0.65 0.0 -0.05"/>
-                <noise angle="0.000001745" angular_velocity="0.00001745"/>
+                <noise angle="0.01 0.01 0.05" angular_velocity="0.05" yaw_drift="0.001" linear_acceleration="0.1"/>
                 <ros_publisher topic="/${robot_name}/imu/stonefish/data"/>
             </sensor>
 
             <sensor name="gps" type="gps" rate="1.0">
                 <link name="Base"/>
                 <origin rpy="0.0 0.0 0.0" xyz="-0.7 0.0 -0.3"/>
-                <noise ned_position="0.5"/>
+                <noise ned_position="0.1"/>
                 <ros_publisher topic="/${robot_name}/gps/fix"/>
             </sensor>
+
+            <!-- <sensor name="odom" rate="10.0" type="odometry">
+                <noise position="0.00" velocity="0.00" angle="0.0" angular_velocity="0.00"/>
+                <history samples="1"/>
+                <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 -1.5707963"/>
+                <link name="Base"/>
+                <ros_publisher topic="/${robot_name}/sf/odometry"/>
+            </sensor> -->
 
 
             <!-- perception sensors -->
@@ -179,15 +187,15 @@
             </sensor> -->
             
             
-            <!-- <sensor name="msis" type="msis">
-                <specs step="1.8" bins="1250" horizontal_beam_width="2.0" vertical_beam_width="15.0"/>
-                <settings range_min="0.75" range_max="50.0" rotation_min="-45.0" rotation_max="45.0" gain="2.5"/>
+            <sensor name="msis" type="msis">
+                <specs step="1.8" bins="1250" horizontal_beam_width="1.5" vertical_beam_width="15.0"/>
+                <settings range_min="0.75" range_max="50.0" rotation_min="-45.0" rotation_max="45.0" gain="3.5"/>
                 <noise multiplicative="0.02" additive="0.03"/>
-                <display colormap="gray"/>
+                <display colormap="hot"/>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707963"/>
                 <link name="Base"/>
                 <ros_publisher topic="/${robot_name}/msis/data"/>
-            </sensor> -->
+            </sensor>
 
 
 
