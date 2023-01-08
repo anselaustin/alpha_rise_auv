@@ -6,10 +6,11 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
+        - /TF1
         - /TF1/Frames1
         - /Marker1
         - /Marker2
-        - /LaserScan1
+        - /Odometry1
       Splitter Ratio: 0.5089927911758423
     Tree Height: 826
   - Class: rviz/Selection
@@ -148,33 +149,31 @@ Visualization Manager:
         alpha_rise/cg_link:
           Value: false
         alpha_rise/dvl:
-          Value: true
+          Value: false
         alpha_rise/dvl_sf:
-          Value: true
+          Value: false
         alpha_rise/gps:
           Value: true
         alpha_rise/heave_bow_thruster_link:
-          Value: true
-        alpha_rise/heave_stern_thruster_link:
-          Value: true
-        alpha_rise/imu:
-          Value: true
-        alpha_rise/imu_sf:
-          Value: true
-        alpha_rise/map:
-          Value: true
-        alpha_rise/odom:
           Value: false
+        alpha_rise/heave_stern_thruster_link:
+          Value: false
+        alpha_rise/imu:
+          Value: false
+        alpha_rise/imu_sf:
+          Value: false
+        alpha_rise/odom:
+          Value: true
         alpha_rise/pressure:
-          Value: true
+          Value: false
         alpha_rise/surge_thruster_link:
-          Value: true
+          Value: false
         alpha_rise/sway_bow_thruster_link:
-          Value: true
+          Value: false
         alpha_rise/world:
           Value: false
         alpha_rise/world_ned:
-          Value: true
+          Value: false
       Marker Alpha: 1
       Marker Scale: 0.5
       Name: TF
@@ -182,34 +181,33 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        alpha_rise/map:
-          alpha_rise/odom:
-            alpha_rise/base_link:
-              alpha_rise/cg_link:
-                {}
-              alpha_rise/dvl:
-                {}
-              alpha_rise/dvl_sf:
-                {}
-              alpha_rise/gps:
-                {}
-              alpha_rise/heave_bow_thruster_link:
-                {}
-              alpha_rise/heave_stern_thruster_link:
-                {}
-              alpha_rise/imu:
-                {}
-              alpha_rise/imu_sf:
-                {}
-              alpha_rise/pressure:
-                {}
-              alpha_rise/surge_thruster_link:
-                {}
-              alpha_rise/sway_bow_thruster_link:
-                {}
-            alpha_rise/world:
-              alpha_rise/world_ned:
-                {}
+        alpha_rise/odom:
+          alpha_rise/base_link:
+            alpha_rise/cg_link:
+              {}
+            alpha_rise/dvl:
+              {}
+            alpha_rise/dvl_sf:
+              {}
+            alpha_rise/gps:
+              {}
+            alpha_rise/heave_bow_thruster_link:
+              {}
+            alpha_rise/heave_stern_thruster_link:
+              {}
+            alpha_rise/imu:
+              {}
+            alpha_rise/imu_sf:
+              {}
+            alpha_rise/pressure:
+              {}
+            alpha_rise/surge_thruster_link:
+              {}
+            alpha_rise/sway_bow_thruster_link:
+              {}
+          alpha_rise/world:
+            alpha_rise/world_ned:
+              {}
       Update Interval: 0
       Value: true
     - Class: rviz/Marker
@@ -228,33 +226,40 @@ Visualization Manager:
         {}
       Queue Size: 100
       Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
         Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/LaserScan
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 10
       Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
-      Name: LaserScan
-      Position Transformer: XYZ
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
       Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.20000000298023224
-      Style: Flat Squares
-      Topic: /alpha_rise/MSS/data
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /alpha_rise/odometry/filtered/local
       Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
@@ -284,7 +289,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 19.28765296936035
+      Distance: 6.743910789489746
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -300,9 +305,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7853981852531433
+      Pitch: 0.5253978371620178
       Target Frame: alpha/base_link
-      Yaw: 0.7853981852531433
+      Yaw: 1.2403920888900757
     Saved: ~
 Window Geometry:
   Displays:
@@ -310,7 +315,7 @@ Window Geometry:
   Height: 1016
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000002cd000003c5fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000016000003c5000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000003c5fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730100000016000003c5000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004f30000003efc0100000002fb0000000800540069006d00650000000000000004f30000041800fffffffb0000000800540069006d0065010000000000000450000000000000000000000350000003c500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000270000003c5fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000016000003c5000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c000002610000000100000100000003c5fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730100000016000003c5000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004f30000003efc0100000002fb0000000800540069006d00650000000000000004f30000041800fffffffb0000000800540069006d00650100000000000004500000000000000000000003bc000003c500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:

@@ -16,11 +16,12 @@
     <node ns="$(arg robot_name)" name="$(arg robot_name)_navsat_transform" pkg="robot_localization" type="navsat_transform_node" output="screen">
         <rosparam command="load" file="$(find alpha_rise_config)/config/navsat.yaml"/>
         <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
-        <remap from="odometry/filtered" to="odometry/filtered/global" />
+        <remap from="odometry/filtered" to="odometry/filtered/local" />
         <remap from="/imu/data" to="imu/data"/>
+        <remap from="/gps/fix" to="gps/fix/" />
     </node>
 
-    <node ns="$(arg robot_name)" name="ekf_localization_global" pkg="robot_localization" type="ekf_localization_node" output="screen">
+    <!-- <node ns="$(arg robot_name)" name="ekf_localization_global" pkg="robot_localization" type="ekf_localization_node" output="screen">
         <rosparam command="load" file="$(find alpha_rise_config)/config/robot_localization_global.yaml"/>
 
         <param name="base_link_frame" type="string" value="$(arg robot_name)/base_link"/>
@@ -43,7 +44,21 @@
         <param name="odom0_differential" value="false"/>
         <param name="odom0_relative" value="false"/>
 
-        <param name="odom1" value="odometry/filtered/global"/>
+        <param name="odom1" value="odometry/gps"/>
+        <rosparam param="odom1_config">
+         [true, true, false,
+        false, false, false,
+        false, false, false,
+        false, false, false,
+        false, false, false]
+        </rosparam>
+        <param name="odom1_queue_size" value="10"/>
+        <param name="odom1_nodelay" value="true"/>
+        <param name="odom1_differential" value="false"/>
+        <param name="odom1_relative" value="false"/> 
+
+
+        <! <param name="odom1" value="odometry/filtered/global"/>
         <rosparam param="odom1_config">
         [true, true, false,
         false, false, false,
@@ -54,8 +69,8 @@
         <param name="odom1_queue_size" value="10"/>
         <param name="odom1_nodelay" value="true"/>
         <param name="odom1_differential" value="false"/>
-        <param name="odom1_relative" value="false"/>
+        <param name="odom1_relative" value="false"/> -->
 
-    </node>
+    <!-- </node>  -->
 
 </launch>

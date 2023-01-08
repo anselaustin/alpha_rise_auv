@@ -14,7 +14,7 @@
 
     <xacro:include filename="$(find alpha_rise_stonefish)/description/alpha_rise.scn.xacro"/>
 
-    <xacro:alpha_rise robot_name="$(arg robot_name)" xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <xacro:alpha_rise robot_name="$(arg robot_name)" xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707963"/>
 
     <environment>
         <ned latitude="41" longitude="71"/>

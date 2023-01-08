@@ -9,7 +9,7 @@ publish_filtered_gps: true
 
 # broadcast_cartesian_transform: true
 
-# use_odometry_yaw: true
+use_odometry_yaw: true
 
 # use_local_cartesian: true
 

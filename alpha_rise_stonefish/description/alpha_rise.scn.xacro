@@ -148,14 +148,14 @@
                 <origin rpy="3.1415926 0.0 0.0" xyz="-0.65 0.0 0.1"/>
                 <specs beam_angle="30.0"/>
                 <range velocity="9.0 9.0 9.0" altitude_min="0.2" altitude_max="200.0"/>
-                <noise velocity="0.0015" altitude="0.001"/>
+                <noise velocity="0.015" altitude="0.001"/>
                 <ros_publisher topic="/${robot_name}/dvl/twist" altitude_topic="/${robot_name}/dvl/altitude"/>
             </sensor>
 
             <sensor name="imu_sf" type="imu" rate="20.0">
                 <link name="Base"/>
                 <origin rpy="3.1415926 0.0 0.0" xyz="-0.65 0.0 -0.05"/>
-                <noise angle="0.000001745" angular_velocity="0.00001745"/>
+                <noise angle="0.01745" angular_velocity="0.001745"/>
                 <ros_publisher topic="/${robot_name}/imu/stonefish/data"/>
             </sensor>
 
