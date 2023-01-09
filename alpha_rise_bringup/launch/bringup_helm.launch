@@ -29,7 +29,7 @@
 
         <!-- load path following related param -->
         <rosparam command="load" ns="path_local" file="$(find alpha_rise_config)/mission/param/path_local.yaml"/>
-        <param name="path_local/frame_id" value="$(arg robot_name)/world_ned"/>
+        <param name="path_local/frame_id" value="$(arg robot_name)/odom"/>
 
         <rosparam command="load" ns="path_global" file="$(find alpha_rise_config)/mission/param/path_global.yaml"/>
         <param name="path_global/frame_id" value="$(arg robot_name)/odom"/>
@@ -38,12 +38,8 @@
         <param name="gps_wpt/target_frame_id" value="$(arg robot_name)/odom"/>
         <param name="gps_wpt/target_topic" value="/$(arg robot_name)/helm/path_global/update_waypoints"/>
         <param name="gps_wpt/fromll_service" value="/$(arg robot_name)/fromLL"/>
-        <!-- <param name="gps_wpt/fromll_service" value="test"/> -->
 
        
-
-        <!-- <rosparam command="load" ns="timer" file="$(find alpha_rise_config)/mission/param/timer.yaml"/> -->
-
     </node>
 
 </launch>
