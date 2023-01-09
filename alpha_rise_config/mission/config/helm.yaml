@@ -45,11 +45,11 @@ behaviors:
       - { name: survey_local, priority: 1 }
       - { name: survey_global, priority: 1 }
 
-  - name: periodic_sufacing
+  - name: periodic_surfacing
     plugin: helm::PeriodicSurface
     states:
-      - {name: survey_local, priority: 0 }
-      - {name: survey_global, priority: 0 }
+      - {name: survey_local, priority: 2}
+      - {name: survey_global, priority: 2}
 
   - name: gps_wpt
     plugin: helm::GpsWaypoint

@@ -13,6 +13,22 @@
     <arg name="robot_name" default="alpha_rise"/>
 
     <arg name="is_sim" default="false"/>
+<!-- 
+    <node
+      ns="$(arg robot_name)"
+      name="odom2map"
+      pkg="tf2_ros"
+      type="static_transform_publisher"
+      args="0.0 0.0 0.0 0.0 0.0 0.0 $(arg robot_name)/odom $(arg robot_name)/map"/> -->
+
+    <node ns="$(arg robot_name)" name="$(arg robot_name)_navsat_transform" pkg="robot_localization" type="navsat_transform_node" output="screen">
+        <rosparam command="load" file="$(find alpha_rise_config)/config/navsat.yaml"/>
+        <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
+        <!-- <rosparam param="datum">[41.0, 71.0, 0.0, "$(arg robot_name)/odom", "$(arg robot_name)/base_link"]</rosparam> -->
+        <remap from="odometry/filtered" to="odometry/filtered/local" />
+        <remap from="/imu/data" to="imu/data"/>
+        <remap from="/gps/fix" to="gps/fix/" />
+    </node>
 
     <node ns="$(arg robot_name)" name="alpha_localization_local" pkg="robot_localization" type="ekf_localization_node" output="screen">
         <rosparam command="load" file="$(find alpha_rise_config)/config/robot_localization_local.yaml"/>
@@ -21,6 +37,7 @@
         <param name="odom_frame" type="string" value="$(arg robot_name)/odom"/>
         <param name="world_frame" type="string" value="$(arg robot_name)/odom"/>
         <param name="map_frame" type="string" value="$(arg robot_name)/map"/>
+
         <remap from="odometry/filtered" to="odometry/filtered/local"/>
         <remap from="accel/filtered" to="accel/filtered/local"/>
 
