@@ -145,7 +145,7 @@ Visualization Manager:
       Frames:
         All Enabled: false
         alpha_rise/base_link:
-          Value: false
+          Value: true
         alpha_rise/cg_link:
           Value: false
         alpha_rise/dvl:
@@ -163,17 +163,17 @@ Visualization Manager:
         alpha_rise/imu_sf:
           Value: false
         alpha_rise/odom:
-          Value: false
+          Value: true
         alpha_rise/pressure:
           Value: true
         alpha_rise/surge_thruster_link:
           Value: true
         alpha_rise/sway_bow_thruster_link:
-          Value: true
+          Value: false
         alpha_rise/world:
-          Value: false
+          Value: true
         alpha_rise/world_ned:
-          Value: false
+          Value: true
       Marker Alpha: 1
       Marker Scale: 0.5
       Name: TF
@@ -289,7 +289,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.7213141918182373
+      Distance: 3.9691929817199707
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -297,9 +297,9 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.17385025322437286
-        Y: 0.14606662094593048
-        Z: -0.49485084414482117
+        X: -0.012263325043022633
+        Y: -0.32129600644111633
+        Z: -0.1341516077518463
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
