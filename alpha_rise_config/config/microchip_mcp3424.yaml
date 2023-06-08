@@ -1,0 +1,18 @@
+
+sensor:
+    # brief: device address
+    address: "0x69"
+    #
+    gain: 1
+    # 
+    bitrate: 18
+    # 
+    mode: 1
+    #
+    channel: 1
+
+system:
+    #
+    rate: 1
+    # 
+    multiplier: 11

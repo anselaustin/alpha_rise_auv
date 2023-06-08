@@ -1,0 +1,12 @@
+Serial:
+  port: /dev/ttySC3
+  baud: 115200
+  parity: 0
+  databits: 8
+  stopbits: 1
+  timeout: 1000
+
+Thrusters:
+  channels: 4
+  safety_timeout: 3
+  safety_rate: 1

@@ -22,3 +22,4 @@ state_fail: kill
 beta_gain: 1.0 
 #integral term.
 sigma: 0.2
+overshoot_timeout: 600
