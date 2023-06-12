@@ -1,6 +1,7 @@
 generator_type: tf
 
-controller_frequency: 20
+# controller_frequency: 20
+controller_frequency: 10
 
 # tf_prefix: alpha_rise
 

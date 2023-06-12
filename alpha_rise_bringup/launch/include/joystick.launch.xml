@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="robot_name" default="changeme"/>
+
+  <!-- start pwm command generation -->
+  <node ns="$(arg robot_name)" name="test_thruster_node" pkg="alpha_driver_uart" 
+        type="test_thruster_node" output="screen">
+
+        <param name="factor" value="0.5" type="double" />
+
+        <remap from="joy_axes0" to="control/thruster/sway_bow" />
+        <remap from="joy_axes1" to="control/thruster/surge" />
+        <remap from="joy_axes2" to="control/thruster/heave_bow" />
+        <remap from="joy_axes3" to="control/thruster/heave_stern" />
+  </node>
+
+</launch>
