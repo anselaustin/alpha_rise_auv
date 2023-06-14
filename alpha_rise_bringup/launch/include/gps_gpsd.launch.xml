@@ -15,6 +15,8 @@
     <node ns="$(arg robot_name)" pkg="gpsd_client" type="gpsd_client" name="gpsd_client" output="screen">
         <remap from="fix" to="gps/fix"/>
         <param name="frame_id" value="$(arg robot_name)/gps"/>
+
+        <!-- <param name="port" value="4000"/> -->
     </node>
 
 </launch>

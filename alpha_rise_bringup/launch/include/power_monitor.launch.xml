@@ -19,8 +19,6 @@
 
       <param name="frame_id" value="$(arg robot_name)/power_minitor"/>
 
-      <remap from="voltage" to="power_minitor/voltage"/>
-
   </node>
 
 </launch>
