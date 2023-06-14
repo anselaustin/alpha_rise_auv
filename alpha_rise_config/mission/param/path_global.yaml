@@ -11,7 +11,7 @@
 # UTM Zone: 19
 # North up.
 
-acceptance_radius: 3.0
+acceptance_radius: 1.0
 update_topic: update_waypoints
 append_topic: append_waypoints
 surge_velocity: 0.80
@@ -22,3 +22,4 @@ state_fail: kill
 beta_gain: 1.0 
 #integral term.
 sigma: 0.2
+overshoot_timeout: 600
