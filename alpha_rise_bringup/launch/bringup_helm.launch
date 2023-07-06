@@ -42,6 +42,7 @@
         <param name="gps_wpt/fromll_service" value="/$(arg robot_name)/fromLL"/>
 
         <rosparam command="load" ns="direct_control" file="$(find alpha_rise_config)/mission/param/direct_control.yaml"/>
+        <rosparam command="load" ns="timer" file="$(find alpha_rise_config)/mission/param/timer.yaml"/>
        
     </node>
 
