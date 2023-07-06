@@ -29,7 +29,7 @@ finite_state_machine:
       - start
 
   - name: test
-    mode: test_12dof
+    mode: hold_depth
     transitions:
       - start
       - kill
