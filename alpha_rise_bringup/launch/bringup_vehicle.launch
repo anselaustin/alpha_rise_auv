@@ -27,6 +27,11 @@
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include>  
 
+  <!-- Bring up the Bluerobotics Ping360 MSIS sensor -->
+  <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_ping360.launch.xml">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>  
+
   <!-- Bring up the Power Minotor  -->
   <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
