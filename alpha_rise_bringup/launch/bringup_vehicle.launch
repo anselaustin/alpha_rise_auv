@@ -13,9 +13,9 @@
   <arg name="robot_name" default="alpha_rise"/>
 
   <!-- Just for Thruster Test -->
-  <!-- <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
+  <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
-  </include> -->
+  </include>
 
   <!-- Bring up Pico MCU -->
   <include file="$(find alpha_rise_bringup)/launch/include/pi_pico.launch.xml">
@@ -48,9 +48,9 @@
   </include>
 
   <!-- Bring up GPS -->
-  <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
+  <!-- <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
+  </include> -->
 
   <!-- Bring up the ROS TF  -->
   <include file="$(find alpha_rise_bringup)/launch/include/description.launch.xml">

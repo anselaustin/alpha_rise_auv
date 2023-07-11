@@ -14,7 +14,7 @@ Interface:
 
   connection_type: "udp"
 
-  udp_address: "192.168.2.104"
+  udp_address: "192.168.2.105"
 
   udp_port: 12345
 ###################################################################
@@ -32,11 +32,11 @@ Configuration:
 
   # Note: Sonar max range [m], from 1 to 50
   # Default: 2
-  range: 2 
+  range: 10 
 
   # Note: Scanned angular sector around sonar heading [degrees], from 60 to 360. Will oscillate if not 360.
   # Default: 360
-  angle_sector: 180
+  angle_sector: 360
 
   # Note: Sonar angular resolution [degrees], from 1 to 20.
   # Default: 1

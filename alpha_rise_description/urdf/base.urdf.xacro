@@ -20,7 +20,7 @@
 
     <link name="imu"/>
     <joint name="imu_joint" type="fixed">
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.09 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="imu"/>
     </joint>
@@ -34,7 +34,7 @@
 
     <link name="dvl"/>
     <joint name="dvl_joint" type="fixed">
-        <origin xyz="0.7 0.0 -0.1" rpy="3.1415926 0.0 0.0"/>
+        <origin xyz="0.0625 0.0 -0.1" rpy="3.1415926 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="dvl"/>
     </joint>
@@ -60,6 +60,13 @@
         <child link="pressure"/>
     </joint>
 
+    <link name="ping360_link"/>
+    <joint name="ping360_joint" type="fixed">
+        <origin xyz="0.792 0.0 -0.085" rpy="3.1415926 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="ping360_link"/>
+    </joint>
+
     <!-- thrusters -->
     <link name="surge_thruster_link"/>
     <joint name="surge_thruster_joint" type="fixed">
@@ -70,21 +77,21 @@
 
     <link name="heave_bow_thruster_link"/>
     <joint name="heave_bow_thruster_joint" type="fixed">
-        <origin xyz="0.4755 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+        <origin xyz="0.387 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
         <parent link="base_link"/>
         <child link="heave_bow_thruster_link"/>
     </joint>
 
     <link name="heave_stern_thruster_link"/>
     <joint name="heave_stern_thruster_joint" type="fixed">
-        <origin xyz="-0.3 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+        <origin xyz="-0.387 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
         <parent link="base_link"/>
         <child link="heave_stern_thruster_link"/>
     </joint>
 
     <link name="sway_bow_thruster_link"/>
     <joint name="sway_bow_thruster_joint" type="fixed">
-        <origin xyz="0.71 0.0 0.0" rpy="0.0 0.0 -1.57079632679"/>
+        <origin xyz="0.71 0.0 0.0" rpy="0.0 0.0 1.57079632679"/>
         <parent link="base_link"/>
         <child link="sway_bow_thruster_link"/>
     </joint>
