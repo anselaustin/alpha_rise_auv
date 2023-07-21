@@ -12,14 +12,6 @@
 
   <arg name="robot_name" default="alpha_rise"/>
 
-  <!-- Bring up Pico MCU -->
-  <include file="$(find alpha_rise_bringup)/launch/include/pi_pico.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
-
-  <!-- Bring up the ROS TF  -->
-  <include file="$(find alpha_rise_bringup)/launch/include/description.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
+  <!-- copy some test launch here -->
 
 </launch>
