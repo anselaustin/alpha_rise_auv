@@ -62,7 +62,7 @@
 
     <link name="ping360_link"/>
     <joint name="ping360_joint" type="fixed">
-        <origin xyz="0.792 0.0 -0.085" rpy="3.1415926 0.0 0.0"/>
+        <origin xyz="0.792 0.0 -0.085" rpy="3.1415926 0.0 3.1415926"/>
         <parent link="base_link"/>
         <child link="ping360_link"/>
     </joint>
