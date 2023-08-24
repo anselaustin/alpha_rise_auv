@@ -16,6 +16,7 @@
           type="xsens_mti_node" output="screen">
         <rosparam command="load" file="$(find alpha_rise_config)/config/xsens_imu.yaml" />
         <param name="frame_id" value="$(arg robot_name)/imu"/>
+        <remap from="imu/data" to="imu/xsens/data"/>
     </node>
 
 </launch>

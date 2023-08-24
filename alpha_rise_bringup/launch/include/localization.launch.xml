@@ -93,10 +93,17 @@
         <param name="odom0_differential" value="false"/>
         <param name="odom0_relative" value="false"/>
 
-
     </node>
 
-    <group if="$(arg is_sim)">
+    <group if="$(eval arg('is_sim') == false)">
+        <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="alpha_localization" type="imu_ned_to_enu" output="screen">
+            <remap from="imu_in/data" to="imu/xsens/data"/>
+            <remap from="imu_out/data" to="imu/data"/>
+            <param name="frame_id" value="$(arg robot_name)/imu"/>
+        </node>
+    </group>
+
+    <group if="$(eval arg('is_sim') == true)">
 
         <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="alpha_localization" type="imu_ned_to_enu" output="screen">
             <remap from="imu_in/data" to="imu/stonefish/data"/>
