@@ -122,16 +122,17 @@ thruster_polynomials:
   heave_stern:  [0.0323, 12.9591, 5.1446, 40.0354, -1.1425, -20.6613]
   
 ## Force limits
+## T200 limit is +-25 N beyond that will cause nan solution in QP
 thruster_limits:
   surge:
     max: 40
     min: -10
   sway_bow:
-    max: 30
-    min: -30
+    max: 25
+    min: -25
   heave_bow:
-    max: 25
-    min: -25
+    max: 10
+    min: -10
   heave_stern:
-    max: 25
-    min: -25
+    max: 10
+    min: -10
