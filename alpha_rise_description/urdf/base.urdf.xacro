@@ -4,7 +4,7 @@
 
     <link name="base_link">
         <visual>
-            <origin xyz="0.0 0.0 0.0" rpy="1.5707 0.0 1.5707"/>
+            <origin xyz="-0.2 0.0 0.0" rpy="1.5707 0.0 1.5707"/>
             <geometry>
                 <mesh filename="package://alpha_rise_description/mesh/alpha_rise.stl" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -20,7 +20,7 @@
 
     <link name="imu"/>
     <joint name="imu_joint" type="fixed">
-        <origin xyz="0.0 -0.09 0.0" rpy="-3.1415926 0.0 3.1415926"/>
+        <origin xyz="0.0 -0.09 0.0" rpy="3.1415926 0.0 3.1415926"/>
         <parent link="base_link"/>
         <child link="imu"/>
     </joint>
@@ -28,7 +28,7 @@
     <link name="imu_sf"/>
     <joint name="imu__sf_joint" type="fixed">
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <parent link="base_link"/>
+        <parent link="imu"/>
         <child link="imu_sf"/>
     </joint>
 
@@ -62,7 +62,7 @@
 
     <link name="ping360_link"/>
     <joint name="ping360_joint" type="fixed">
-        <origin xyz="0.792 0.0 -0.085" rpy="3.1415926 0.0 3.1415926"/>
+        <origin xyz="0.592 0.0 -0.085" rpy="3.1415926 0.0 3.1415926"/>
         <parent link="base_link"/>
         <child link="ping360_link"/>
     </joint>
@@ -70,28 +70,28 @@
     <!-- thrusters -->
     <link name="surge_thruster_link"/>
     <joint name="surge_thruster_joint" type="fixed">
-        <origin xyz="-0.57 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="-0.77 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="surge_thruster_link"/>
     </joint>
 
     <link name="heave_bow_thruster_link"/>
     <joint name="heave_bow_thruster_joint" type="fixed">
-        <origin xyz="0.387 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+        <origin xyz="0.387 0.0 0.0" rpy="0.0 -1.57079632679 0.0"/>
         <parent link="base_link"/>
         <child link="heave_bow_thruster_link"/>
     </joint>
 
     <link name="heave_stern_thruster_link"/>
     <joint name="heave_stern_thruster_joint" type="fixed">
-        <origin xyz="-0.387 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+        <origin xyz="-0.387 0.0 0.0" rpy="0.0 -1.57079632679 0.0"/>
         <parent link="base_link"/>
         <child link="heave_stern_thruster_link"/>
     </joint>
 
     <link name="sway_bow_thruster_link"/>
     <joint name="sway_bow_thruster_joint" type="fixed">
-        <origin xyz="0.71 0.0 0.0" rpy="0.0 0.0 1.57079632679"/>
+        <origin xyz="0.51 0.0 0.0" rpy="0.0 0.0 1.57079632679"/>
         <parent link="base_link"/>
         <child link="sway_bow_thruster_link"/>
     </joint>
