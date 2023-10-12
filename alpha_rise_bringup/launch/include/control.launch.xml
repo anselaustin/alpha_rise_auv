@@ -12,17 +12,30 @@
 
     <arg name="robot_name" default="alpha_rise"/>
 
+    <arg name="is_sim" default="false"/>
+
     <arg name="delay" default="15.0" />
 
-    <node ns="$(arg robot_name)" pkg="mvp_control" type="mvp_control_ros_node" name="alpha_control" output="screen"
-          launch-prefix="bash -c 'sleep $(arg delay); $0 $@'" >
-          <!-- only for simulation -->
-        <rosparam command="load" file="$(find alpha_rise_config)/config/control_sim.yaml"/>
-        <!-- for real vehicle -->
-        <!-- <rosparam command="load" file="$(find alpha_rise_config)/config/control.yaml"/> -->
-        <param name="tf_prefix" value="$(arg robot_name)"/>
-        <param name="world_link" value="$(arg robot_name)/world_ned"/>
-        <param name="odometry_source" value="odometry/filtered/local"/>
-    </node>
+    <!-- For the simulation -->
+    <group if="$(eval arg('is_sim') == true)">
+        <node ns="$(arg robot_name)" pkg="mvp_control" type="mvp_control_ros_node" name="alpha_control" 
+              output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'" >
+                <rosparam command="load" file="$(find alpha_rise_config)/config/control_sim.yaml"/>
+                <param name="tf_prefix" value="$(arg robot_name)"/>
+                <param name="world_link" value="$(arg robot_name)/world_ned"/>
+                <param name="odometry_source" value="odometry/filtered/local"/>
+        </node>
+    </group>
+
+    <!-- For the real vehicle -->
+    <group if="$(eval arg('is_sim') == false)">
+        <node ns="$(arg robot_name)" pkg="mvp_control" type="mvp_control_ros_node" name="alpha_control" 
+              output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'" >
+            <rosparam command="load" file="$(find alpha_rise_config)/config/control.yaml"/>
+            <param name="tf_prefix" value="$(arg robot_name)"/>
+            <param name="world_link" value="$(arg robot_name)/world_ned"/>
+            <param name="odometry_source" value="odometry/filtered/local"/>
+        </node>
+    </group>
 
 </launch>
