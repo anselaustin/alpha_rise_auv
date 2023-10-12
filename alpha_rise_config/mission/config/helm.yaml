@@ -9,6 +9,7 @@ finite_state_machine:
       - survey_local
       - survey_global
       - kill
+      - direct
       - test
 
   - name: survey_local
@@ -30,6 +31,12 @@ finite_state_machine:
 
   - name: test
     mode: hold_depth
+    transitions:
+      - start
+      - kill
+
+  - name: direct
+    mode: hold_5dof
     transitions:
       - start
       - kill
@@ -66,6 +73,11 @@ behaviors:
     plugin: helm::DirectControl
     states:
       - { name: test, priority: 1 }
+
+  - name: direct_control_cont
+    plugin: helm::DirectControlCont
+    states:
+      - { name: direct, priority: 1 }
 
   # - name: timer
   #   plugin: helm::Timer
