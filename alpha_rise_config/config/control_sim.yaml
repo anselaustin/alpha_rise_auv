@@ -135,8 +135,8 @@ thruster_limits:
     max: 25
     min: -25
   heave_bow:
-    max: 10
-    min: -15
+    max: 25
+    min: -25
   heave_stern:
-    max: 10
-    min: -15
+    max: 25
+    min: -25
