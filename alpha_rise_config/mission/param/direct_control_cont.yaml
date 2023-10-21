@@ -4,6 +4,9 @@
 #   - test
 ##
 
+global_link: alpha_rise/world_ned
+local_link: alpha_rise/cg_link
+
 ########################################
 ############## Limitation ##############
 ########################################
