@@ -4,6 +4,9 @@
 #   - test
 ##
 
+global_link: alpha_rise/world_ned
+local_link: alpha_rise/cg_link
+
 ########################################
 ############## Limitation ##############
 ########################################
@@ -35,7 +38,7 @@ max_yaw_rate: 4.7
 # position
 desired_x: 0.0
 desired_y: 0.0
-desired_z: 0.0
+desired_z: 0.5
 
 # orientation (0.4 rad = 23 degree)
 desired_roll: 0.0 

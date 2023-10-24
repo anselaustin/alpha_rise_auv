@@ -88,7 +88,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         cg_link:
           Alpha: 1
           Show Axes: false
@@ -121,6 +120,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        nose_tip_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         ping360_link:
           Alpha: 1
           Show Axes: false
@@ -153,7 +157,7 @@ Visualization Manager:
         alpha_rise/cg_link:
           Value: false
         alpha_rise/dvl:
-          Value: false
+          Value: true
         alpha_rise/dvl_sf:
           Value: false
         alpha_rise/gps:
@@ -166,6 +170,8 @@ Visualization Manager:
           Value: true
         alpha_rise/imu_sf:
           Value: false
+        alpha_rise/nose_tip_link:
+          Value: true
         alpha_rise/odom:
           Value: false
         alpha_rise/ping360_link:
@@ -204,6 +210,8 @@ Visualization Manager:
             alpha_rise/imu:
               alpha_rise/imu_sf:
                 {}
+            alpha_rise/nose_tip_link:
+              {}
             alpha_rise/ping360_link:
               {}
             alpha_rise/pressure:
@@ -222,7 +230,7 @@ Visualization Manager:
       Marker Topic: /alpha_rise/helm/path_global/path
       Name: Marker
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -230,7 +238,7 @@ Visualization Manager:
       Marker Topic: /alpha_rise/helm/path_global/segment
       Name: Marker
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
     - Angle Tolerance: 0.10000000149011612
@@ -250,7 +258,7 @@ Visualization Manager:
           Scale: 1
           Value: true
         Value: false
-      Enabled: true
+      Enabled: false
       Keep: 100
       Name: Odometry
       Position Tolerance: 0.10000000149011612
@@ -267,7 +275,7 @@ Visualization Manager:
         Value: Arrow
       Topic: /alpha_rise/odometry/filtered/local
       Unreliable: false
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 238; 238; 236
@@ -296,7 +304,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 55.336334228515625
+      Distance: 3.112959861755371
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -304,17 +312,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -30.136518478393555
-        Y: 16.407880783081055
-        Z: -0.8702738881111145
+        X: 0.1481793075799942
+        Y: -0.44099971652030945
+        Z: -0.18525326251983643
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 0.45039838552474976
       Target Frame: alpha/base_link
-      Yaw: 0.0003924369812011719
+      Yaw: 0.13039813935756683
     Saved: ~
 Window Geometry:
   Displays:
