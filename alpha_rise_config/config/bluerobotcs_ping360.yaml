@@ -74,7 +74,7 @@ Driver:
 
   # Note: Publish images on Sensors_msgs/Image
   # Default: true
-  image_publish: true
+  image_publish: false
 
   # Note: Output image size [pixels], from 100 to 1000
   # Default: 300
@@ -97,7 +97,7 @@ Driver:
   echo_publish: true
 
   #Note: publish PointCloud2 message
-  pcl_publish : true
+  pcl_publish : true 
 
 
 
