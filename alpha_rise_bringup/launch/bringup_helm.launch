@@ -36,14 +36,20 @@
         <rosparam command="load" ns="path_global" file="$(find alpha_rise_config)/mission/param/path_global.yaml"/>
         <param name="path_global/frame_id" value="$(arg robot_name)/odom"/>
 
+
         <rosparam command="load" ns="path_3d" file="$(find alpha_rise_config)/mission/param/path_3d.yaml"/>
-        <param name="path_3d/frame_id" value="$(arg robot_name)/odom"/>
+        <!-- waypoint frame id  should keep in world-->
+        <param name="path_3d/frame_id" value="$(arg robot_name)/world"/>
+        <param name="path_3d/enu_frame" value="$(arg robot_name)/world"/>
+        <!-- robot localization local to lat lon service name  -->
         <param name="path_3d/toll_service" value="/$(arg robot_name)/toLL"/>
+
 
         <rosparam command="load" ns="gps_wpt" file="$(find alpha_rise_config)/mission/param/gps_wpt.yaml"/>
         <param name="gps_wpt/target_frame_id" value="$(arg robot_name)/odom"/>
         <param name="gps_wpt/target_topic" value="/$(arg robot_name)/helm/path_global/update_waypoints"/>
         <param name="gps_wpt/fromll_service" value="/$(arg robot_name)/fromLL"/>
+
 
         <rosparam command="load" ns="direct_control" file="$(find alpha_rise_config)/mission/param/direct_control.yaml"/>
         <rosparam command="load" ns="direct_control_cont" file="$(find alpha_rise_config)/mission/param/direct_control_cont.yaml"/>
