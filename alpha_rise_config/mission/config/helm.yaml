@@ -10,11 +10,18 @@ finite_state_machine:
     transitions:
       - survey_local
       - survey_global
+      - survey_3d
       - kill
       - direct
       - test
 
   - name: survey_local
+    mode: flight
+    transitions:
+      - start
+      - kill
+
+  - name: survey_3d
     mode: flight
     transitions:
       - start
@@ -53,6 +60,11 @@ behaviors:
     plugin: helm::PathFollowingI
     states:
       - { name: survey_global, priority: 1 }
+
+  - name: path_3d
+    plugin: helm::PathFollowing3D
+    states:
+      - { name: survey_3d, priority: 1 }
 
   - name: depth_tracking
     plugin: helm::DepthTracking
