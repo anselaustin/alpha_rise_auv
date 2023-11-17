@@ -10,7 +10,7 @@ waypoints:
   - {x: 25, y: 40, z: 0}
 
 
-pdate_topic: update_waypoints
+update_topic: update_waypoints
 append_topic: append_waypoints
 surge_velocity: 0.80
 lookahead_distance: 10.0
