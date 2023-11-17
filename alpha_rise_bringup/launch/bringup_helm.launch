@@ -41,7 +41,7 @@
         <!-- waypoint frame id  should keep in world-->
         <param name="path_3d/frame_id" value="$(arg robot_name)/world"/>
         <param name="path_3d/enu_frame" value="$(arg robot_name)/world"/>
-        <param name="path_3d/waypoint_path" value="/home/jason_miller/alpha_devel/src/alpha_rise_auv/alpha_rise_config/mission/param/go_to_list/"/>
+        <param name="path_3d/waypoint_path" value="$(find alpha_rise_config)/mission/param/go_to_list/"/>
         <!-- robot localization local to lat lon service name  -->
         <param name="path_3d/toll_service" value="/$(arg robot_name)/toLL"/>
 
