@@ -1,0 +1,7 @@
+#frame id has to be keep in world as from LL will convert waypoint into lat lon
+frame_id: "world" 
+
+ll_waypoints:
+  - {lat: 41.0001,  lon: -71.005,  alt: -10}
+  - {lat: 41.0002,  lon: -71.005,  alt: -5}
+  - {lat: 41.0002,  lon: -71.002,  alt: -20}
