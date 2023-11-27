@@ -12,22 +12,22 @@ System:
 
 PWM_Control:
   # vertical-front
-  heave_bow:
+  sway:
     channel: 0
     mode: thruster
-    topic: control/thruster/heave_bow
+    topic: control/thruster/sway
   # vertical-back
-  heave_stern:
+  surge:
     channel: 1
     mode: thruster
-    topic: control/thruster/heave_stern
+    topic: control/thruster/surge
   # horizaontal-front
-  sway_bow:
+  heave_bow:
     channel: 2
     mode: thruster
-    topic: control/thruster/sway_bow
+    topic: control/thruster/heave_bow
   # main
-  surge:
+  heave_stern:
     channel: 3
     mode: thruster
-    topic: control/thruster/surge 
+    topic: control/thruster/heave_stern 
