@@ -54,3 +54,9 @@ desired_heave: 0.0
 desired_roll_rate: 0.0
 desired_pitch_rate: 0.0
 desired_yaw_rate: 0.0
+
+####tele-op, ang in degrees####
+tele_d_yaw: 10.0 
+tele_d_pitch: 10.0
+tele_d_z: 0.5
+tele_s_surge: 1

@@ -12,7 +12,7 @@
 
   <arg name="robot_name" default="alpha_rise"/>
 
-  <!-- Just for Thruster Test -->
+  <!-- Just for teleop-->
   <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
