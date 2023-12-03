@@ -7,7 +7,7 @@
         type="joy_node" output="screen">
 
         <!-- main -->
-        <remap from="joy" to="$(arg robot_name)/direct_control/joy" />
+        <remap from="joy" to="helm/direct_control/joy" />
         
   </node>
 
