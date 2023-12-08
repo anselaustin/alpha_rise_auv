@@ -12,6 +12,8 @@
 
     <arg name="robot_name" default="alpha_rise"/>
 
+    <arg name="comms_hardware" default="false"/>
+
     <!--
         List of the simulated worlds in the 'alpha_sci_stonefish'
     -->
@@ -45,6 +47,12 @@
     <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
+
+    <group if="$(eval arg('comms_hardware') == true)">
+        <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">
+            <arg name="robot_name" value="$(arg robot_name)"/>
+        </include>
+    </group>
 
 
 </launch>
