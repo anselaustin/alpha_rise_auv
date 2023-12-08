@@ -72,4 +72,10 @@
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
 
+  <!-- Bring up Comms -->
+  <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+
 </launch>
