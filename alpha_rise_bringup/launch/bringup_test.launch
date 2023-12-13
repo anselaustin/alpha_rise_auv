@@ -13,7 +13,5 @@
   <arg name="robot_name" default="alpha_rise"/>
 
   <!-- copy some test launch here -->
-  <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>  
+
 </launch>
