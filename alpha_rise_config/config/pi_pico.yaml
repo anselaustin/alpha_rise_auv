@@ -12,10 +12,10 @@ System:
 
 PWM_Control:
   # vertical-front
-  sway:
+  sway_bow:
     channel: 0
     mode: thruster
-    topic: control/thruster/sway
+    topic: control/thruster/sway_bow
   # vertical-back
   surge:
     channel: 1
