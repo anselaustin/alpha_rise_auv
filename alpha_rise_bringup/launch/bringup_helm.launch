@@ -42,6 +42,8 @@
 
 
         <rosparam command="load" ns="direct_control" file="$(find alpha_rise_config)/mission/param/direct_control.yaml"/>
+        <rosparam command="load" ns="teleop" file="$(find alpha_rise_config)/mission/param/teleop.yaml"/>
+
         <!-- <rosparam command="load" ns="timer" file="$(find alpha_rise_config)/mission/param/timer.yaml"/> -->
        
     </node>
