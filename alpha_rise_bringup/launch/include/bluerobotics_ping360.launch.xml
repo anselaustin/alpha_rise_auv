@@ -18,4 +18,10 @@
         <rosparam command="load" file="$(find alpha_rise_config)/config/bluerobotcs_ping360.yaml"/>
     </node>
 
+    <!--Filtering node for pointcloud-->
+    <node ns="$(arg robot_name)" pkg="ping360_sonar" type="processing.py" name = "pcl_filter_node" output="screen">
+        <remap from="/msis" to="/alpha_rise/msis/pointcloud"/>
+        <remap from="/filtered_msis" to="/alpha_rise/msis/pointcloud/filtered"/>
+    </node>
+
 </launch>
