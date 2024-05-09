@@ -4,8 +4,8 @@
 
   <arg name="robot_name" default="changeme"/>
 
-  <node ns="$(arg robot_name)" pkg="alpha_comms" type="alpha_acomms_node" 
-        name="alpha_acomms_node" output="screen">
+  <node ns="$(arg robot_name)" pkg="alpha_acomms" type="alpha_acomms_node" 
+        name="alpha_acomms_node">
 
   </node>
 

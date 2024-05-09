@@ -13,9 +13,9 @@
   <arg name="robot_name" default="alpha_rise"/>
 
   <!-- Just for teleop-->
-  <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
+  <!-- <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
+  </include> -->
 
   <!-- Bring up Pico MCU -->
   <include file="$(find alpha_rise_bringup)/launch/include/pi_pico.launch.xml">
@@ -28,9 +28,9 @@
   </include>  
 
   <!-- Bring up the Bluerobotics Ping360 MSIS sensor -->
-  <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_ping360.launch.xml">
+  <!-- <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_ping360.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>  
+  </include>   -->
 
   <!-- Bring up the Power Minotor  -->
   <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
@@ -73,9 +73,9 @@
   </include>
 
   <!-- Bring up Comms -->
-  <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">
+  <!-- <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
+  </include> -->
 
 
 </launch>
