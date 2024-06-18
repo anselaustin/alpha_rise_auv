@@ -49,9 +49,9 @@
   </include>
 
   <!-- Bring up Xsens AHRS -->
-  <!-- <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
+  <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
-  </include> -->
+  </include>
 
   <!-- Bring up GPS -->
   <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
