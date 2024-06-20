@@ -38,7 +38,7 @@
         <param name="odom_frame" type="string" value="$(arg robot_name)/odom"/>
         <param name="world_frame" type="string" value="$(arg robot_name)/odom"/>
         <param name="map_frame" type="string" value="$(arg robot_name)/map"/>
-
+        <param name="predict_to_current_time" value="true"/>
         <remap from="odometry/filtered" to="odometry/filtered/local"/>
         <remap from="accel/filtered" to="accel/filtered/local"/>
 
