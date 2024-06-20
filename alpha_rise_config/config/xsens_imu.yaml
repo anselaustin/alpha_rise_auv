@@ -10,7 +10,8 @@ baudrate: 115200 # non necessary for some devices
 # log_file: log.mtb
 
 publisher_queue_size: 5
-
+gps_fix_topic: "/alpha_rise/gps/fix"
+set_lla_with_gps_fix: true
 # TF transform frame_id (default: imu_link), you may want to change it if you use multiple devices
 
 # Message publishers
