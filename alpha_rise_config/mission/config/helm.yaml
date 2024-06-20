@@ -40,10 +40,10 @@ behaviors:
     states:
       - {name: survey_3d, priority: 2}
 
-  - name: direct_control
-    plugin: helm::DirectControlCont
-    states:
-      - { name: direct_control, priority: 1 }
+  # - name: direct_control
+  #   plugin: helm::DirectControlCont
+  #   states:
+  #     - { name: direct_control, priority: 1 }
 
   - name: teleop
     plugin: helm::Teleoperation
