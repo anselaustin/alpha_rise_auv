@@ -26,5 +26,9 @@
     <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_bar30.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
-  
+
+<!-- Bringup computer monitor node-->
+    <include file="$(find alpha_rise_bringup)/launch/include/monitor.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
 </launch>
