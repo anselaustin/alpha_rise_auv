@@ -5,15 +5,15 @@
 ##
 
 waypoints:
-  - {x: 0,  y: 40,  z: -5}
-  - {x: 0,  y: 30, z: -10}
+  - {x: 0,  y: 40,  z: 0}
+  - {x: 0,  y: 30, z: 0}
   - {x: 25, y: 40, z: 0}
 
 
 update_topic: update_waypoints
 append_topic: append_waypoints
 surge_velocity: 0.80
-lookahead_distance: 10.0
+lookahead_distance: 6.0
 state_done: start
 state_fail: kill
 # cross-track error rate compenstation
