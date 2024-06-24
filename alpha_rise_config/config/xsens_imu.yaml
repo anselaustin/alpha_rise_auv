@@ -3,7 +3,7 @@
 ##  - port + baudrate information
 ##  - nothing: the driver scans for devices and selects the first found.
 # device_id: '077007EF' # uppercase hex string
-port: '/dev/ttyS0'
+# port: '/dev/ttyS0'
 baudrate: 115200 # non necessary for some devices
 
 ## Log file (optional), placed in ~/.ros/ otherwise use absolute path
@@ -11,15 +11,15 @@ baudrate: 115200 # non necessary for some devices
 
 publisher_queue_size: 5
 gps_fix_topic: "/alpha_rise/gps/fix"
-set_lla_with_gps_fix: true
+set_lla_with_gps_fix: false
 # TF transform frame_id (default: imu_link), you may want to change it if you use multiple devices
 
 # Message publishers
 pub_imu: true
 pub_quaternion: false
 pub_mag: true
-pub_angular_velocity: true
-pub_acceleration: true
+pub_angular_velocity: false
+pub_acceleration: false
 pub_free_acceleration: false
 pub_dq: false
 pub_dv: false

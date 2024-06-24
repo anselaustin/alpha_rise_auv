@@ -11,12 +11,22 @@
 <launch>
 
   <arg name="robot_name" default="alpha_rise"/>
-  <node ns="$(arg robot_name)" pkg="power_monitor" type="power_monitor_node" 
-        name="power_monitor_node" output="screen">
+   <!-- Bring up Xsens AHRS -->
+    <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> 
 
-      <rosparam command="load" file="$(find alpha_rise_config)/config/power_minitor.yaml"/>
+    <node ns="$(arg robot_name)" pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="screen">
+        <param name = "world_frame" value="enu"/>
+        <param name = "mag_bias_x" value="-0.0741"/>
+        <param name = "mag_bias_y" value="0.0665"/>
+        <param name = "mag_bias_z" value="0.0214"/>
+        <param name = "gyro_bias_x" value="-0.0031"/>
+        <param name = "gyro_bias_y" value="0.0010"/>
+        <param name = "gyro_bias_z" value="0.0001"/>
+        <param name = "use_mag" value = "true" />
+        <remap from="imu/data_raw" to="imu/data"/>
+        <remap from="imu/data" to="imu/data_filtered"/>
+    </node>
 
-      <param name="frame_id" value="$(arg robot_name)/power_minitor"/>
-
-  </node>
 </launch>
