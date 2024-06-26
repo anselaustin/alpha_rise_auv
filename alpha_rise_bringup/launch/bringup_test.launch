@@ -11,7 +11,7 @@
 <launch>
 
   <arg name="robot_name" default="alpha_rise"/>
-     <node ns="$(arg robot_name)" pkg="alpha_localization" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
+     <!-- <node ns="$(arg robot_name)" pkg="alpha_localization" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
         <param name = "tf_prefix" value="$(arg robot_name)"/>
         <param name = "mag_declination" value="0.0" />
         <param name = "mag_declination_auto" value="false" />
@@ -21,11 +21,11 @@
         <param name = "datum_longitude" value="-71.0"/>
         <param name = "position_accuracy" value="3.0"/>
         <remap from = "odometry" to ="odometry/filtered/local" />
-    </node>
+    </node> -->
    <!-- Bring up Xsens AHRS -->
-    <!-- <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
+    <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include>  -->
+    </include> 
 
     <!-- <node ns="$(arg robot_name)" pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="screen">
         <param name = "world_frame" value="enu"/>
