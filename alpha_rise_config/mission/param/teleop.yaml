@@ -12,9 +12,9 @@ local_link: alpha_rise/cg_link
 ########################################
 
 # unit: meter
-max_x: 5
-max_y: 5
-max_z: 5
+max_x: 50
+max_y: 50
+max_z: 50
 
 # unit: radians 
 max_roll: 1.5707963 

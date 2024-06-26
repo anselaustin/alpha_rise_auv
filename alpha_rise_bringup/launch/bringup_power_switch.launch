@@ -12,7 +12,7 @@
 
   <arg name="robot_name" default="alpha_rise"/>
 
-<include file="$(find alpha_rise_bringup)/launch/include/gpio_manager.launch.xml">
+  <include file="$(find alpha_rise_bringup)/launch/include/gpio_manager.launch.xml">
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include> 
 
