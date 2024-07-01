@@ -1,0 +1,24 @@
+
+<launch>
+
+    <arg name="robot_name" default="alpha_rise"/>
+
+    <node ns="$(arg robot_name)" pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="screen">
+        <param name = "world_frame" value="enu"/>
+        <param name = "gain" value = "0.1"/>
+        <param name = "mag_bias_x" value="-0."/>
+        <param name = "mag_bias_y" value="-0."/>
+        <param name = "mag_bias_z" value="0."/>
+        <!-- <param name = "gyro_bias_x" value="0.003938972170523805"/> -->
+        <!-- <param name = "gyro_bias_y" value="0.0024459341328570707"/> -->
+        <!-- <param name = "gyro_bias_z" value="-0.0020029001999464758"/> -->
+        <!-- <param name = "accel_bias_x" value="0.003938972170523805"/> -->
+        <!-- <param name = "accel_bias_y" value="0.0024459341328570707"/> -->
+        <!-- <param name = "accel_bias_z" value="-0.0020029001999464758"/> -->
+        <param name = "use_mag" value = "true" />
+        <remap from="imu/data_raw" to="imu/data"/>
+        <remap from="imu/data" to="imu/data_filtered"/>
+        <remap from="imu/mag" to ="mag"/>
+    </node>
+
+</launch>

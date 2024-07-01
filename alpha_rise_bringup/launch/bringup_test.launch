@@ -11,33 +11,24 @@
 <launch>
 
   <arg name="robot_name" default="alpha_rise"/>
-     <!-- <node ns="$(arg robot_name)" pkg="alpha_localization" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
-        <param name = "tf_prefix" value="$(arg robot_name)"/>
-        <param name = "mag_declination" value="0.0" />
-        <param name = "mag_declination_auto" value="false" />
-        <param name = "acceptable_var" value = "5" />
-        <param name = "m_gps_wait_time" value ="5"/>
-        <param name = "datum_latitude" value="41.0"/>
-        <param name = "datum_longitude" value="-71.0"/>
-        <param name = "position_accuracy" value="3.0"/>
-        <remap from = "odometry" to ="odometry/filtered/local" />
-    </node> -->
-   <!-- Bring up Xsens AHRS -->
-    <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
+      <!-- Bring up the Bluerobotics Pressure sensor -->
+    <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_bar30.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+
+    <!-- Bring up the Power Minotor  -->
+    <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+
+    <!-- Bring up the microstrain ahrs  -->
+    <include file="$(find alpha_rise_bringup)/launch/include/microstrain.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include> 
 
-    <!-- <node ns="$(arg robot_name)" pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="screen">
-        <param name = "world_frame" value="enu"/>
-        <param name = "mag_bias_x" value="-0.0741"/>
-        <param name = "mag_bias_y" value="0.0665"/>
-        <param name = "mag_bias_z" value="0.0214"/>
-        <param name = "gyro_bias_x" value="-0.0031"/>
-        <param name = "gyro_bias_y" value="0.0010"/>
-        <param name = "gyro_bias_z" value="0.0001"/>
-        <param name = "use_mag" value = "true" />
-        <remap from="imu/data_raw" to="imu/data"/>
-        <remap from="imu/data" to="imu/data_filtered"/>
-    </node> -->
+    <!-- Bring up madgwick filter-->
+    <include file="$(find alpha_rise_bringup)/launch/include/madgwick_filter.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> 
 
 </launch>
