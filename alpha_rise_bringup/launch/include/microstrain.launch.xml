@@ -88,7 +88,7 @@
 
     <param name="publish_imu"   value="true"                  type="bool" />
     <param name="imu_data_rate" value="100"                   type="int" />
-    <param name="imu_frame_id"  value="$(arg imu_frame_id)"   type="str" />
+    <param name="imu_frame_id"  value="$(arg robot_name)/$(arg imu_frame_id)"   type="str" />
 
     <!-- Static IMU message covariance values (the device does not generate these) -->
     <!-- Since internally these are std::vector we need to use the rosparam tags -->

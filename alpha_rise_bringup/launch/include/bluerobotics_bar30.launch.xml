@@ -13,7 +13,7 @@
     <arg name="robot_name" default="changeme"/>
 
     <node ns="$(arg robot_name)" pkg="bluerobotics_pressure" type="driver.py" 
-          name="bluerobotics_pressure_node" output="screen" respawn="true">
+          name="bluerobotics_pressure_node" output="screen">
 
       <rosparam command="load" file="$(find alpha_rise_config)/config/bluerobotcs_bar30.yaml"/>
 
