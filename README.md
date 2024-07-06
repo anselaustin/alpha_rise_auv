@@ -82,9 +82,8 @@ git clone --single-branch --branch main https://github.com/GSO-soslab/world_of_s
     git clone --single-branch --branch noetic-devel https://github.com/GSO-soslab/mvp_core.git
     ```
 
-### Install Dependencies
+- Install Dependencies
 
-Install dependencies
 ```bash
 rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 ```
@@ -93,6 +92,12 @@ Install dependencies for `mvp_core`
 cd mvp_core
 git submodule update --init --recursive
 ```
+
+- Install a specific submodule 
+```
+git submodule update <specific path to submodule>
+```
+
 
 ### Compile the code
 go back to the ROS Workspace dir (e.g., catkin_ws), then do
