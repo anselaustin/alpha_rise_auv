@@ -75,7 +75,7 @@ git clone --single-branch --branch main https://github.com/GSO-soslab/world_of_s
 
 **stonefish_mvp** is a wrapper modified from [stonefish_ros](https://github.com/patrykcieslak/stonefish_ros) for ROS interface with ROS-MVP.
 
-### Hardware drivers
+### Hardware drivers (Not needed for simulation)
 - Clone [mvp_core] repo which include other hardware related source code, sensor drivers, and other utilities.
 
     ```bash
