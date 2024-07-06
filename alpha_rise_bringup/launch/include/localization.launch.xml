@@ -49,7 +49,7 @@
         <param name="twist0_relative" value="false"/>
         <param name="twist0_queue_size" value="20"/>
 
-        <param name="pose0" value="depth_filtered"/>
+        <param name="pose0" value="depth/odometry"/>
         <rosparam param="pose0_config">
         [false, false,  true,
          false, false, false,
@@ -76,14 +76,13 @@
         <param name="odom0_relative" value="false"/>
     </node>
 
-    <node ns="$(arg robot_name)" name="depth_filter" pkg="alpha_localization" type="depth_filter_node" output="screen">
-        <param name="frame_id" value="$(arg robot_name)/odom"/>
-
+    <node ns="$(arg robot_name)" name="depth_odometry_publisher" pkg="mvp_localization_utilities" type="depth_odometry_publisher" output="screen">
+        <param name="frame_id" value="$(arg robot_name)/world"/>
         <remap from="depth" to="bar30/depth"/>
-        <remap from="depth_filtered" to="depth_filtered"/>
+        <!-- <remap from="depth_filtered" to="depth_filtered"/> -->
     </node>
     
-    <node ns="$(arg robot_name)" pkg="alpha_localization" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
+    <node ns="$(arg robot_name)" pkg="mvp_localization_utilities" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
         <param name = "tf_prefix" value="$(arg robot_name)"/>
         <param name = "acceptable_var" value = "5" />
         <param name = "m_gps_wait_time" value ="30"/>

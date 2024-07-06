@@ -54,7 +54,7 @@
         <param name="twist0_relative" value="false"/>
         <param name="twist0_queue_size" value="20"/>
 
-        <param name="pose0" value="depth_filtered"/>
+        <param name="pose0" value="depth/odometry"/>
         <rosparam param="pose0_config">
         [false, false,  true,
          false, false, false,
@@ -82,7 +82,7 @@
     </node>
 
 
-    <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="alpha_localization" type="imu_ned_to_enu" output="screen">
+    <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="mvp_localization_utilities" type="imu_ned_to_enu" output="screen">
         <remap from="imu_in/data" to="imu/stonefish/data"/>
         <remap from="imu_out/data" to="imu/data"/>
         <param name="frame_id" value="$(arg robot_name)/imu"/>
@@ -96,18 +96,17 @@
         <param name="yaw_reverse" value="-1"/>
     </node>
 
-    <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="alpha_localization" type="pressure_to_depth_node" output="screen">
+    <node ns="$(arg robot_name)" name="pressure_to_depth" pkg="mvp_localization_utilities" type="pressure_to_depth_node" output="screen">
         <param name="frame_id" value="$(arg robot_name)/pressure"/>
         <remap from="depth" to="depth"/>
         <remap from="pressure" to="pressure"/>
     </node>
 
-    <node ns="$(arg robot_name)" name="depth_filter" pkg="alpha_localization" type="depth_filter_node" output="screen">
+    <node ns="$(arg robot_name)" name="depth_odometry_publisher" pkg="mvp_localization_utilities" type="depth_odometry_publisher" output="screen">
         <param name="frame_id" value="$(arg robot_name)/world"/>
-        <remap from="depth_filtered" to="depth_filtered"/>
     </node>
 
-    <node ns="$(arg robot_name)" pkg="alpha_localization" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
+    <node ns="$(arg robot_name)" pkg="mvp_localization_utilities" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
         <param name = "tf_prefix" value="$(arg robot_name)"/>
         <param name = "mag_declination" value="0.0" />
         <param name = "mag_declination_auto" value="false" />
