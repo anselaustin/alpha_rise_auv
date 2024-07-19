@@ -89,6 +89,7 @@
         <param name = "datum_longitude" value="-71.410977"/>
         <param name = "position_accuracy" value="3.0"/>
         <remap from = "odometry" to ="odometry/filtered/local" />
+        <param name = "mag_model_path" value = "$(find mvp_localization_utilities)/config/magnetic"/>
     </node>
 
 </launch>

@@ -35,10 +35,10 @@ behaviors:
     states:
       - { name: survey_3d, priority: 1 }
 
-  - name: periodic_surfacing
-    plugin: helm::PeriodicSurface
-    states:
-      - {name: survey_3d, priority: 2}
+  # - name: periodic_surfacing
+  #   plugin: helm::PeriodicSurface
+  #   states:
+  #     - {name: survey_3d, priority: 2}
 
   # - name: direct_control
   #   plugin: helm::DirectControlCont
