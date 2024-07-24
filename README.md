@@ -70,7 +70,7 @@ git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-rob
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_mission
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_utilities.git
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/stonefish_mvp
-git clone --single-branch --branch main https://github.com/uri-ocean-robotics/world_of_stonefish.git
+git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/world_of_stonefish.git
 ```
 
 **stonefish_mvp** is a wrapper modified from [stonefish_ros](https://github.com/patrykcieslak/stonefish_ros) for ROS interface with ROS-MVP.
