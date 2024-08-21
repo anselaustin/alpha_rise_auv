@@ -28,7 +28,7 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
-    <include file="$(find alpha_rise_bringup)/launch/include/localization.launch.xml">
+    <include file="$(find alpha_rise_bringup)/launch/include/localization_sim.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="is_sim" value="true"/>
     </include>
@@ -48,11 +48,11 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
-    <group if="$(eval arg('comms_hardware') == true)">
+    <!-- <group if="$(eval arg('comms_hardware') == true)">
         <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">
             <arg name="robot_name" value="$(arg robot_name)"/>
         </include>
-    </group>
+    </group> -->
 
 
 </launch>
