@@ -10,17 +10,18 @@
       <param name="max_samples" value="10000" />
       <param name="use_sim_time" value="false" />
       <param name="calibrations_dir" value="$(find calib_magnetometer)/result" />
-      <remap from="/magnetometer" to="mag"/>
+      <remap from="/magnetometer" to="imu/mag"/>
     </node>
 
     <!-- gyro calibrtion  -->
     <!-- <node ns="$(arg robot_name)" pkg="calib_gyro" type="calibrate_gyro.py" name="gyro_calibrator" output="screen">
+    <remap from="imu/data" to="imu/data_raw"/>
     </node> -->
 
     <!-- accelerometer calibrtion  -->
     <!-- <node ns="$(arg robot_name)" pkg="calib_accelerometer" type="calib_accel" name="accl_calibrator" output="screen">
-      <remap from="/imu_input" to="imu/data"/>
-      <param name="max_samples" value="600" />
+      <remap from="/imu_input" to="imu/data_raw"/>
+      <param name="max_samples" value="1000" />
       <param name="log" value="false" />
     </node> -->
 
