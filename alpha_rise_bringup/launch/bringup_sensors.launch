@@ -32,18 +32,18 @@
     </include> 
 
     <!-- Bring up GPS -->
-    <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
+    <!-- <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> -->
+
+    <include file="$(find alpha_rise_bringup)/launch/include/gps_gpsd.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
-    <!-- <include file="$(find alpha_rise_bringup)/launch/include/gps_gpsd.launch.xml">
-        <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
-
     <!-- Bringup computer monitor node-->
-    <!-- <include file="$(find alpha_rise_bringup)/launch/include/monitor.launch.xml">
+    <include file="$(find alpha_rise_bringup)/launch/include/monitor.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
     <!-- Bring up Waterlinked DVL -->
     <include file="$(find alpha_rise_bringup)/launch/include/waterlinked_dvl.launch.xml">
