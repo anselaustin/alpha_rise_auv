@@ -85,7 +85,7 @@
     <node ns="$(arg robot_name)" name="imu_ned_to_enu" pkg="mvp_localization_utilities" type="imu_ned_to_enu" output="screen">
         <remap from="imu_in/data" to="imu/stonefish/data"/>
         <remap from="imu_out/data" to="imu/data"/>
-        <param name="frame_id" value="$(arg robot_name)/imu"/>
+        <param name="frame_id" value="$(arg robot_name)/imu_sf"/>
 
         <param name="roll_offset" value="3.1415926"/>
         <param name="pitch_offset" value="0.0"/>
