@@ -28,8 +28,8 @@
 
     <link name="imu"/>
     <joint name="imu_joint" type="fixed">
-        <origin xyz="-0.2 -0.0 0.0" rpy="0 0.0 0.0"/>
-        <parent link="base_link"/>
+        <origin xyz="-0.65 0.0 0.05" rpy="0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
         <child link="imu"/>
     </joint>
 
@@ -56,8 +56,9 @@
 
     <link name="gps"/>
     <joint name="gps_joint" type="fixed">
-        <origin xyz="0.05 0.0 0.32" rpy="0.0 0.0 0.0"/>
-        <parent link="base_link"/>
+        <!-- <origin xyz="0.05 0.0 0.32" rpy="0.0 0.0 0.0"/> -->
+        <origin xyz="-0.65 0.0 0.3" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
         <child link="gps"/>
     </joint>
 
@@ -82,6 +83,21 @@
         <child link="ping360_link_sf"/>
     </joint>
 
+    <link name="HydromeaUVX"/>
+    <joint name="HydromeaUVX_joint" type="fixed">
+        <!-- <origin xyz="-0.35 0.00 0.15" rpy="0.5236 0.0 0.0"/> -->
+        <origin xyz="-0.35 0.00 -0.15" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="HydromeaUVX"/>
+    </joint>
+
+    <link name="usbl_transp"/>
+    <joint name="usbl_transp_joint" type="fixed">
+        <origin xyz="0.15 0.00 -0.15" rpy="0.0 0.0 0.0"/>
+        <!-- <origin xyz="-0.5 0.00 -0.15" rpy="1.0472 0.0 0.0"/> -->
+        <parent link="base_link"/>
+        <child link="usbl_transp"/>
+    </joint>
 
     <!-- thrusters -->
     <link name="surge_thruster_link"/>
